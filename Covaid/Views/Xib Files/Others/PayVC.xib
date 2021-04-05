@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayVC" customModule="Covaid" customModuleProvider="target">
+            <connections>
+                <outlet property="cardTable" destination="lS0-Pu-Iwn" id="JTe-bL-t6d"/>
+                <outlet property="payButton" destination="qFm-HE-Xj8" id="fE0-AP-Znz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQV-1z-VCl">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items>
+                        <navigationItem title="Saved Cards" id="JuM-im-CQ9">
+                            <barButtonItem key="leftBarButtonItem" title="back" image="ic_back" id="bas-tG-ung">
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="-1" id="soa-Iy-dSc"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFm-HE-Xj8">
+                    <rect key="frame" x="20" y="817" width="374" height="45"/>
+                    <color key="backgroundColor" red="0.4039215686" green="0.2274509804" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="GXm-xP-fQP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="Add Card">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="payBtn:" destination="-1" eventType="touchUpInside" id="6CS-Jc-grE"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="5" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="lS0-Pu-Iwn">
+                    <rect key="frame" x="0.0" y="88" width="414" height="729"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LAH-YE-MmJ"/>
+                        <outlet property="delegate" destination="-1" id="V5o-QX-BEV"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qFm-HE-Xj8" firstAttribute="top" secondItem="lS0-Pu-Iwn" secondAttribute="bottom" id="2a4-SM-e6m"/>
+                <constraint firstItem="lS0-Pu-Iwn" firstAttribute="top" secondItem="OQV-1z-VCl" secondAttribute="bottom" id="DLa-yO-uaS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qFm-HE-Xj8" secondAttribute="trailing" constant="20" id="IBf-AP-7bG"/>
+                <constraint firstItem="OQV-1z-VCl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PZy-H6-IIj"/>
+                <constraint firstItem="OQV-1z-VCl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PpF-er-XmX"/>
+                <constraint firstItem="lS0-Pu-Iwn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Uaf-LV-7mH"/>
+                <constraint firstItem="qFm-HE-Xj8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aUR-rj-a8b"/>
+                <constraint firstItem="qFm-HE-Xj8" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="l0n-T1-UWv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lS0-Pu-Iwn" secondAttribute="trailing" id="qh4-oe-A5Q"/>
+                <constraint firstItem="OQV-1z-VCl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yRt-jL-xaf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back" width="24" height="24"/>
+    </resources>
+</document>

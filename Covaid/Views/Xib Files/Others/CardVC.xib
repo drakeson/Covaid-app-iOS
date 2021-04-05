@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardVC" customModule="Covaid" customModuleProvider="target">
+            <connections>
+                <outlet property="creditCardView" destination="kB5-0D-z05" id="75W-Q8-qld"/>
+                <outlet property="payButton" destination="4WB-hH-Nm6" id="Lqk-CC-iE5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7o-uL-tqI">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items>
+                        <navigationItem title="Add Card" id="Voi-SK-t1v">
+                            <barButtonItem key="leftBarButtonItem" title="back" image="ic_back" id="mRp-vf-eTN">
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="-1" id="96O-Ly-nRW"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-hH-Nm6">
+                    <rect key="frame" x="20" y="822" width="374" height="40"/>
+                    <color key="backgroundColor" red="0.38431372549999998" green="0.2784313725" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="d6c-vZ-Hi5"/>
+                    </constraints>
+                    <state key="normal" title="Add Card">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="payBtn:" destination="-1" eventType="touchUpInside" id="uWi-ul-KwH"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kB5-0D-z05" customClass="CreditCardViewSwift" customModule="CreditCardViewSwift">
+                    <rect key="frame" x="20" y="98" width="374" height="200"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="aqD-H9-wYQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4WB-hH-Nm6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2VB-wi-IiY"/>
+                <constraint firstItem="4WB-hH-Nm6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="8qU-fk-nbw"/>
+                <constraint firstItem="kB5-0D-z05" firstAttribute="top" secondItem="O7o-uL-tqI" secondAttribute="bottom" constant="10" id="Bem-nS-2wS"/>
+                <constraint firstItem="O7o-uL-tqI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KkG-TI-UI0"/>
+                <constraint firstItem="kB5-0D-z05" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Mlv-DN-NPP"/>
+                <constraint firstItem="O7o-uL-tqI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mo5-bh-y7c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4WB-hH-Nm6" secondAttribute="trailing" constant="20" id="Oci-5Z-OuT"/>
+                <constraint firstItem="O7o-uL-tqI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="o29-wu-8ri"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kB5-0D-z05" secondAttribute="trailing" constant="20" id="pTc-sJ-PWl"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
